@@ -57,17 +57,21 @@ fun ErrorPage(viewModel: ViewModel, id: Int? = null) {
                 colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xFF0094FF)),
                 onClick = {
                     when (viewModel) {
-                    is FilmViewModel -> {
-                        viewModel.getFilmById(id!!)
+                        is FilmViewModel -> {
+                            viewModel.getFilmById(id!!)
+                        }
+                        is FilmListViewModel -> {
+                            viewModel.getFilms()
+                        }
                     }
-                    is FilmListViewModel -> {
-                        viewModel.getFilms()
-                    }
-                }},
-                modifier = Modifier.clip(RoundedCornerShape(50.dp)).background(Color(0xFF0094FF))
+                },
+                modifier = Modifier
+                    .clip(RoundedCornerShape(50.dp))
+                    .background(Color(0xFF0094FF)),
+                elevation = ButtonDefaults.elevation(0.dp),
 
-            ) {
-               Text(
+                ) {
+                Text(
                     text = "Повторить",
                     fontSize = 16.sp,
                     lineHeight = 16.sp,

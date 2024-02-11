@@ -1,5 +1,6 @@
 package com.example.finteh.ui_code
 
+import Film
 import FilmDesc
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -29,7 +30,7 @@ import com.example.finteh.models.FilmViewModel
 
 @Composable
 fun FilmPageLoading(navController: NavHostController, filmId: Int, filmViewModel: FilmViewModel) {
-    val loading: FilmDesc? by filmViewModel.state.collectAsState()
+    val loading: Film? by filmViewModel.state.collectAsState()
     if (loading == null)
         Box(
             contentAlignment = Alignment.Center,
@@ -48,7 +49,7 @@ fun FilmPageLoading(navController: NavHostController, filmId: Int, filmViewModel
 
 @Composable
 fun FilmPageInfo(filmViewModel: FilmViewModel, navController: NavHostController) {
-    val data: FilmDesc? by filmViewModel.state.collectAsState()
+    val data: Film? by filmViewModel.state.collectAsState()
     Column {
         Box() {
             Image(

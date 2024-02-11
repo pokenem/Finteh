@@ -19,6 +19,8 @@ class FilmListViewModel : ViewModel() {
 
     val state: MutableStateFlow<List<Film>?> = MutableStateFlow(null)
 
+    var filmList: List<Film>? = emptyList()
+
     init {
         getFilms()
     }
@@ -28,6 +30,7 @@ class FilmListViewModel : ViewModel() {
             try {
                 val films = filmRepository.getFilms()
                 state.value = films
+                filmList = films
             } catch (e: Exception) {
                 state.value = emptyList()
             }

@@ -69,6 +69,7 @@ fun FilmTile(film: Film,navController: NavController) {
                             fontSize = 22.sp,
                             lineHeight = 16.sp,
                             maxLines = 1,
+                            color = Color.Black
                         )
                         Text(
                             overflow = TextOverflow.Ellipsis,
