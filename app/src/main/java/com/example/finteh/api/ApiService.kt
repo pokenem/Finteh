@@ -37,6 +37,12 @@ data class FilmDesc(
     val posterUrl: String,
     val genres: List<Genre>,
     val description: String,
+    val countries: List<Country>,
+)
+
+@Serializable
+data class Country(
+    val country: String,
 )
 @Serializable
 data class Genre(

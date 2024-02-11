@@ -20,6 +20,7 @@ fun AppNavHost(
     startDestination: String = NavigationItem.Popular.route,
 ) {
     val filmListViewModel: FilmListViewModel = viewModel()
+
     NavHost(
         modifier = modifier,
         navController = navController,

@@ -1,6 +1,9 @@
 package com.example.finteh.models
 
 import Film
+import android.content.Context
+import android.net.ConnectivityManager
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.finteh.models.FilmRepository
@@ -20,13 +23,14 @@ class FilmListViewModel : ViewModel() {
         getFilms()
     }
 
-   /* val coroutineExceptionHandler = CoroutineExceptionHandler{_, throwable ->
-        throwable.printStackTrace()
-    }*/
     fun getFilms() {
         viewModelScope.launch(Dispatchers.IO) {
-            val films = filmRepository.getFilms()
-            state.value = films
+            try {
+                val films = filmRepository.getFilms()
+                state.value = films
+            } catch (e: Exception) {
+                state.value = emptyList()
+            }
         }
     }
 }

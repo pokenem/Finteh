@@ -26,7 +26,7 @@ fun loadingPage(paddingValues: PaddingValues, filmListViewModel: FilmListViewMod
         }
     else {
         if (loading!!.isEmpty()) {
-            ErrorPage()
+            ErrorPage(filmListViewModel)
         } else {
             popularPageInfo(filmListViewModel,navController)
         }
