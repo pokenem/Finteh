@@ -23,26 +23,16 @@ data class FilmsTop(
 
 @Serializable
 data class Film(
-    val filmId: Int,
-    val nameRu: String,
-    val year: String,
-    val posterUrlPreview: String,
-    val posterUrl: String,
-    val genres: List<Genre>,
+    val filmId: Int?,
+    val nameRu: String?,
+    val year: String?,
+    val posterUrlPreview: String?,
+    val posterUrl: String?,
+    val genres: List<Genre>?,
     val favourite: Boolean = false,
-    val kinopoiskId: Int,
-    val description: String,
-    val countries: List<Country>,
-)
-@Serializable
-data class FilmDesc(
-    val kinopoiskId: Int,
-    val nameRu: String,
-    val year: String,
-    val posterUrl: String,
-    val genres: List<Genre>,
-    val description: String,
-    val countries: List<Country>,
+    val kinopoiskId: Int?,
+    val description: String?,
+    val countries: List<Country>?,
 )
 
 @Serializable

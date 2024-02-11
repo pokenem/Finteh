@@ -2,7 +2,6 @@ package com.example.finteh.models
 
 import Country
 import Film
-import FilmDesc
 import Genre
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

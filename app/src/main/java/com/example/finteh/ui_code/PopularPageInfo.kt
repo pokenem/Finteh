@@ -2,7 +2,9 @@ package com.example.finteh.ui_code
 
 import Film
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
@@ -26,8 +28,9 @@ fun popularPageInfo(filmListViewModel: FilmListViewModel,navController: NavContr
             .verticalScroll(rememberScrollState())
     ) {
         for (it in data!!) {
-            FilmTile(film = it,navController)
+            FilmTile(film = it,navController,filmListViewModel)
         }
+        Spacer(modifier = Modifier.size(30.dp))
 
     }
 }

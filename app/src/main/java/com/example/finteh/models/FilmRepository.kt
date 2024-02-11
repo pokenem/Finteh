@@ -2,7 +2,6 @@ package com.example.finteh.models
 
 import Country
 import Film
-import FilmDesc
 import FilmsTop
 import Genre
 import android.content.Context
