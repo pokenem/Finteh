@@ -1,4 +1,6 @@
-import retrofit2.CallAdapter
+package com.example.finteh.api
+
+import ApiService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
