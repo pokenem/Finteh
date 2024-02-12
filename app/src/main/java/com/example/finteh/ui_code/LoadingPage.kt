@@ -15,7 +15,11 @@ import androidx.navigation.NavController
 import com.example.finteh.models.FilmListViewModel
 
 @Composable
-fun loadingPage(paddingValues: PaddingValues, filmListViewModel: FilmListViewModel, navController: NavController) {
+fun loadingPage(
+    paddingValues: PaddingValues,
+    filmListViewModel: FilmListViewModel,
+    navController: NavController
+) {
     val loading: List<Film>? by filmListViewModel.state.collectAsState()
     if (loading == null)
         Box(
@@ -28,7 +32,7 @@ fun loadingPage(paddingValues: PaddingValues, filmListViewModel: FilmListViewMod
         if (loading!!.isEmpty()) {
             ErrorPage(filmListViewModel)
         } else {
-            popularPageInfo(filmListViewModel,navController)
+            popularPageInfo(filmListViewModel, navController)
         }
     }
 }

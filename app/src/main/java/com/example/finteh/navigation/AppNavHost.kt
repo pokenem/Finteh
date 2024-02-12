@@ -27,12 +27,12 @@ fun AppNavHost(
         startDestination = startDestination
     ) {
         composable(NavigationItem.Popular.route) {
-            popularPage(navController,filmListViewModel)
+            popularPage(navController, filmListViewModel)
         }
         composable(NavigationItem.FilmDescPage.route + "/{filmId}") { backStackEntry ->
             val filmId = backStackEntry.arguments?.getString("filmId")
-            val filmViewModel: FilmViewModel = FilmViewModel(filmId!!.toInt())
-            FilmPageLoading(navController, filmId!!.toInt(), filmViewModel)
+            val filmViewModel = FilmViewModel(filmId!!.toInt())
+            FilmPageLoading(navController, filmId.toInt(), filmViewModel)
         }
     }
 }

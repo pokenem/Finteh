@@ -1,6 +1,4 @@
 import kotlinx.serialization.Serializable
-import org.json.JSONArray
-import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Headers
@@ -11,6 +9,7 @@ interface ApiService {
     @GET("/api/v2.2/films/top?type=TOP_100_POPULAR_FILMS")
     @Headers("X-API-KEY: e30ffed0-76ab-4dd6-b41f-4c9da2b2735b")
     suspend fun getTop100(): Response<FilmsTop>
+
     @GET("/api/v2.2/films/{id}")
     @Headers("X-API-KEY: e30ffed0-76ab-4dd6-b41f-4c9da2b2735b")
     suspend fun getDescById(@Path("id") getId: Int): Response<Film>
@@ -39,6 +38,7 @@ data class Film(
 data class Country(
     val country: String,
 )
+
 @Serializable
 data class Genre(
     val genre: String,

@@ -3,7 +3,6 @@ package com.example.finteh.ui_code
 import Film
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -18,7 +17,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
-import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -27,7 +25,6 @@ import androidx.navigation.NavController
 import coil.compose.rememberAsyncImagePainter
 import com.example.finteh.models.FilmListViewModel
 import com.example.finteh.navigation.NavigationItem
-import kotlinx.coroutines.flow.update
 
 @Composable
 fun FilmTile(film: Film, navController: NavController, filmListViewModel: FilmListViewModel) {
@@ -76,7 +73,7 @@ fun FilmTile(film: Film, navController: NavController, filmListViewModel: FilmLi
                 Box(
                     modifier = Modifier
                         .height(126.dp)
-                        .padding(start = 16.dp, top = 24.dp, bottom = 24.dp,end = 70.dp)
+                        .padding(start = 16.dp, top = 24.dp, bottom = 24.dp, end = 70.dp)
                 ) {
                     Column(modifier = Modifier.fillMaxSize()) {
                         Text(
@@ -101,8 +98,10 @@ fun FilmTile(film: Film, navController: NavController, filmListViewModel: FilmLi
                     }
                 }
             }
-            if(film.favourite) {
-                Box(modifier = Modifier.align(Alignment.TopEnd).padding(top = 15.dp, end = 15.dp)) {
+            if (film.favourite) {
+                Box(modifier = Modifier
+                    .align(Alignment.TopEnd)
+                    .padding(top = 15.dp, end = 15.dp)) {
                     Icon(
                         Icons.Filled.Star,
                         contentDescription = "Звезда",

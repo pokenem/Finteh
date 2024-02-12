@@ -2,9 +2,6 @@ package com.example.finteh.ui_code
 
 import Film
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.gestures.rememberScrollableState
-import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -21,17 +18,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.modifier.modifierLocalConsumer
-import androidx.compose.ui.modifier.modifierLocalProvider
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import coil.compose.rememberAsyncImagePainter
 import com.example.finteh.models.FilmViewModel
 import com.example.finteh.navigation.NavigationItem
-import java.util.*
 
 @Composable
 fun FilmPageLoading(navController: NavHostController, filmId: Int, filmViewModel: FilmViewModel) {
@@ -68,7 +61,7 @@ fun FilmPageInfo(filmViewModel: FilmViewModel, navController: NavHostController)
                 alignment = Alignment.TopCenter
             )
             IconButton(
-                onClick = { navController.navigate("${NavigationItem.Popular.route}") },
+                onClick = { navController.navigate(NavigationItem.Popular.route) },
                 modifier = Modifier.padding(top = 50.dp, start = 10.dp)
             ) {
                 Icon(

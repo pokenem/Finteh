@@ -14,15 +14,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.finteh.models.FilmListViewModel
-import com.example.finteh.models.FilmViewModel
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.collectLatest
 
 @Composable
 fun popularPage(navController: NavController, filmListViewModel: FilmListViewModel) {
@@ -54,7 +49,7 @@ fun popularPage(navController: NavController, filmListViewModel: FilmListViewMod
                                     fontSize = 20.sp,
                                     color = Color(0xFF979797),
                                     lineHeight = 16.sp,
-                                    )
+                                )
                             },
                             modifier = Modifier
                                 .background(color = Color.White),
@@ -63,24 +58,24 @@ fun popularPage(navController: NavController, filmListViewModel: FilmListViewMod
                                 cursorColor = Color(0xFF979797),
                                 focusedLabelColor = Color.White,
                                 unfocusedLabelColor = Color.White,
-                                textColor= Color.Black,
-                                disabledTextColor= Color.White,
-                                backgroundColor= Color.White,
-                                errorCursorColor= Color.White,
-                                focusedIndicatorColor= Color.White,
-                                unfocusedIndicatorColor= Color.White,
-                                disabledIndicatorColor= Color.White,
-                                errorIndicatorColor= Color.White,
-                                leadingIconColor= Color.White,
-                                disabledLeadingIconColor= Color.White,
-                                errorLeadingIconColor= Color.White,
-                                trailingIconColor= Color.White,
-                                disabledTrailingIconColor= Color.White,
-                                errorTrailingIconColor= Color.White,
-                                disabledLabelColor= Color.White,
-                                errorLabelColor= Color.White,
-                                placeholderColor= Color.White,
-                                disabledPlaceholderColor= Color.White
+                                textColor = Color.Black,
+                                disabledTextColor = Color.White,
+                                backgroundColor = Color.White,
+                                errorCursorColor = Color.White,
+                                focusedIndicatorColor = Color.White,
+                                unfocusedIndicatorColor = Color.White,
+                                disabledIndicatorColor = Color.White,
+                                errorIndicatorColor = Color.White,
+                                leadingIconColor = Color.White,
+                                disabledLeadingIconColor = Color.White,
+                                errorLeadingIconColor = Color.White,
+                                trailingIconColor = Color.White,
+                                disabledTrailingIconColor = Color.White,
+                                errorTrailingIconColor = Color.White,
+                                disabledLabelColor = Color.White,
+                                errorLabelColor = Color.White,
+                                placeholderColor = Color.White,
+                                disabledPlaceholderColor = Color.White
                             )
                         )
                     },

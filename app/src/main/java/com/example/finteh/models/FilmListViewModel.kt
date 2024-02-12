@@ -1,19 +1,12 @@
 package com.example.finteh.models
 
 import Film
-import android.content.Context
-import android.net.ConnectivityManager
-import androidx.compose.ui.text.toLowerCase
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.finteh.models.FilmRepository
 import com.example.finteh.api.ApiClient
-import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
-import okhttp3.internal.notifyAll
 
 class FilmListViewModel : ViewModel() {
 
@@ -62,31 +55,27 @@ class FilmListViewModel : ViewModel() {
         }
     }
 
-    fun showFavourite(){
-        var list: List<Film>?
-        state.value = state.value!!.filter{ film ->
+    fun showFavourite() {
+        state.value = state.value!!.filter { film ->
             film.favourite
         }
     }
 
-    fun backToPopular(){
+    fun backToPopular() {
         state.value = filmList
     }
 
-    fun SearchFilm(str: String){
+    fun SearchFilm(str: String) {
         backToPopular()
         stateSearchStr.value = str
-        state.value = state.value!!.filter{film ->
-            film.nameRu!!.contains(str,ignoreCase = true)
+        state.value = state.value!!.filter { film ->
+            film.nameRu!!.contains(str, ignoreCase = true)
         }
     }
 
-    fun changeSearchState(){
+    fun changeSearchState() {
         stateIsSearch.value = !stateIsSearch.value
         stateSearchStr.value = ""
         backToPopular()
     }
-
-
-
 }

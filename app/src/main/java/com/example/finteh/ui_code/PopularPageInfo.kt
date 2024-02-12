@@ -16,7 +16,7 @@ import androidx.navigation.NavController
 import com.example.finteh.models.FilmListViewModel
 
 @Composable
-fun popularPageInfo(filmListViewModel: FilmListViewModel,navController: NavController) {
+fun popularPageInfo(filmListViewModel: FilmListViewModel, navController: NavController) {
     val data: List<Film>? by filmListViewModel.state.collectAsState()
     Column(
         modifier = Modifier
@@ -28,7 +28,7 @@ fun popularPageInfo(filmListViewModel: FilmListViewModel,navController: NavContr
             .verticalScroll(rememberScrollState())
     ) {
         for (it in data!!) {
-            FilmTile(film = it,navController,filmListViewModel)
+            FilmTile(film = it, navController, filmListViewModel)
         }
         Spacer(modifier = Modifier.size(30.dp))
 

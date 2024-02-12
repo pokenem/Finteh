@@ -11,7 +11,8 @@ class ApiClient {
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build().create(ApiService::class.java)
-    companion object{
+
+    companion object {
         const val BASE_URL = "https://kinopoiskapiunofficial.tech"
     }
 }
